@@ -11,11 +11,12 @@ CC			=	g++
 # Flags
 LIBS		=	`sdl2-config --libs`
 CFLAGS		=	-W -Wall -Wextra -std=c++17 -g3
-CFLAGS		+=	-I$(IMGUI_DIR) -I$(IMGUI_DIR)/backends -I/usr/include/nlohmann
+CFLAGS		+=	-I src/ -I$(IMGUI_DIR) -I$(IMGUI_DIR)/backends -I/usr/include/nlohmann
 CFLAGS		+=	`sdl2-config --cflags`
 
 # Sources
-SRC			=	src/main.cpp					\
+SRC			=	src/main.cpp				\
+			src/lib/sdl/Objects/Window.cpp	\
 
 SRC			+= $(IMGUI_DIR)/imgui.cpp 							\
 			$(IMGUI_DIR)/imgui_demo.cpp 						\
