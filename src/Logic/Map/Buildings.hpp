@@ -6,7 +6,6 @@
 #include <vector>
 #include <memory>
 
-
 namespace cs::game::map
 {
     class Buildings : public MyIterator<buildings::IBuilding> {

@@ -4,8 +4,8 @@ namespace cs::game
 {
     namespace buildings
     {
-        class IBuild;
-        class ABuild;
+        class IBuilding;
+        class ABuilding;
         class Road;
     } // namespace buildings
     namespace map

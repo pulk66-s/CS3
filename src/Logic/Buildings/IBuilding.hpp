@@ -8,10 +8,8 @@
 namespace cs::game::buildings
 {
     class IBuilding :
-    public geometry::Rect,
-    public Entity,
-    public Name {
-    public:
-        virtual void build() = 0;
+        public geometry::Rect,
+        public Entity,
+        public Name {
     };
 } // namespace cs::game::buildings

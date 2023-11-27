@@ -2,6 +2,7 @@ CC		=	g++
 
 SRC		=	src/main.cpp						\
 			src/Logic/Buildings/Road.cpp		\
+			src/Logic/Buildings/ABuilding.cpp	\
 			src/Logic/Map/Actions.cpp			\
 			src/Logic/Map/Buildings.cpp			\
 

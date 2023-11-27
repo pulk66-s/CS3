@@ -7,7 +7,6 @@ namespace cs::game::map
 {
     class Map {
     public:
-
         Buildings &buildings() { return _buildings; }
     private:
         Buildings _buildings;

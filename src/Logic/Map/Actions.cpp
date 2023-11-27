@@ -5,7 +5,9 @@ namespace cs::game::map
 {
     void Actions::addRoad(int x, int y)
     {
-        map->buildings().add(std::make_shared<buildings::Road>(x, y));
+        std::shared_ptr<buildings::IBuilding> road = std::make_shared<buildings::Road>(x, y);
+
+        this->map->buildings().add(road);
     }
 
     void Actions::listBuildings()

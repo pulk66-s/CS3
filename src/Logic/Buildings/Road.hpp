@@ -9,6 +9,5 @@ namespace cs::game::buildings
     public:
         Road();
         Road(int x, int y);
-        void build() override;
     };
 } // namespace cs::game::buildings
