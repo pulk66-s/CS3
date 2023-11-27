@@ -8,6 +8,8 @@ int main(void)
     actions->addRoad(1, 1);
     actions->addRoad(2, 2);
     actions->addRoad(3, 3);
+    actions->addBuilding(4, 4);
     actions->listBuildings();
+    actions->listInfos();
     return 0;
 }

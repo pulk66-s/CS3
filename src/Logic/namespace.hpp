@@ -7,11 +7,21 @@ namespace cs::game
         class IBuilding;
         class ABuilding;
         class Road;
+        class House;
+        namespace zones
+        {
+            class IZone;
+            class AZone;
+            class Habitable;
+        } // namespace zones
     } // namespace buildings
     namespace map
     {
         class Map;
-        class Position;
+        class Infos;
+        namespace infos {
+            class Population;
+        };
         class Buildings;
         class Actions;
     } // namespace map

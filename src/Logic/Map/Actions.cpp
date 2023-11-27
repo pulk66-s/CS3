@@ -10,6 +10,14 @@ namespace cs::game::map
         this->map->buildings().add(road);
     }
 
+    void Actions::addBuilding(int x, int y)
+    {
+        std::shared_ptr<buildings::IBuilding> house = std::make_shared<buildings::House>(x, y);
+
+        this->map->buildings().add(house);
+        house->build(this->map->infos());
+    }
+
     void Actions::listBuildings()
     {
         std::cout << "============" << std::endl;
@@ -21,6 +29,14 @@ namespace cs::game::map
                 << b->size().x() << ", " << b->size().y() << "))"
             << std::endl;
         }
+        std::cout << "============" << std::endl;
+    }
+
+    void Actions::listInfos()
+    {
+        std::cout << "============" << std::endl;
+        std::cout << "All Infos" << std::endl;
+        std::cout << "Population: " << this->map->infos().pop().nb() << std::endl;
         std::cout << "============" << std::endl;
     }
 } // namespace cs::game::map

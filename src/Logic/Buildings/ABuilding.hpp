@@ -9,5 +9,7 @@ namespace cs::game::buildings
     public:
         ABuilding() {};
         ABuilding(int x, int y);
+
+        void build(__attribute__((unused)) map::Infos &infos) override {};
     };
 } // namespace cs::game::buildings
