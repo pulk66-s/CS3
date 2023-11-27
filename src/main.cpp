@@ -1,28 +1,13 @@
-#include "lib/imgui.hpp"
-#include "lib/sdl.hpp"
+#include "Logic.hpp"
 
 int main(void)
 {
-    cs::lib::sdl::Sdl2 sdl;
+    cs::game::Game game;
+    std::shared_ptr<cs::game::map::Actions> actions = game.getActions();
 
-    if (sdl.init() == false)
-        return 1;
-
-    cs::lib::sdl::Window win;
-    cs::lib::imgui::Imgui imgui(&win);
-    bool showWindow = true;
-
-    win.defaultIo();
-
-    while (showWindow) {
-        cs::lib::sdl::Event event;
-
-        event.poll();
-        if (event.isQuit())
-            showWindow = false;
-        imgui.renderStart();
-        imgui.renderEnd();
-        win.display();
-    }
+    actions->addRoad(1, 1);
+    actions->addRoad(2, 2);
+    actions->addRoad(3, 3);
+    actions->listBuildings();
     return 0;
 }

@@ -1,51 +1,28 @@
-##
-## Main Makefile of the project
-##
+CC		=	g++
 
-# Lib Dirs
-IMGUI_DIR	=	lib/imgui
-# Project name
+SRC		=	src/main.cpp						\
+			src/Logic/Buildings/Road.cpp		\
+			src/Logic/Map/Actions.cpp			\
+			src/Logic/Map/Buildings.cpp			\
+
+OBJ		=	$(SRC:.cpp=.o)
+
 NAME		=	cs
-# Compiler
-CC			=	g++
-# Flags
-LIBS		=	`sdl2-config --libs`
-CFLAGS		=	-W -Wall -Wextra -std=c++17 -g3
-CFLAGS		+=	-I src/ -I$(IMGUI_DIR) -I$(IMGUI_DIR)/backends -I/usr/include/nlohmann
-CFLAGS		+=	`sdl2-config --cflags`
 
-# Sources
-SRC			=	src/main.cpp				\
-			src/lib/sdl/Objects/Window.cpp	\
+CFLAGS		=	-Wall -Wextra -Werror -Isrc/
 
-SRC			+= $(IMGUI_DIR)/imgui.cpp 							\
-			$(IMGUI_DIR)/imgui_demo.cpp 						\
-			$(IMGUI_DIR)/imgui_draw.cpp 						\
-			$(IMGUI_DIR)/imgui_tables.cpp 						\
-			$(IMGUI_DIR)/imgui_widgets.cpp						\
-			$(IMGUI_DIR)/backends/imgui_impl_sdl2.cpp			\
-			$(IMGUI_DIR)/backends/imgui_impl_sdlrenderer2.cpp	\
-
-OBJ			=	$(SRC:.cpp=.o)
-
-# By default compile everything
 all: $(NAME)
 
-# clean the project
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
 clean:
 	$(RM) $(OBJ)
 
-# clean the project and the executable
 fclean: clean
 	$(RM) $(NAME)
 
-# clean the project and the executable and recompile
 re: fclean all
 
-# Compile the project
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(LIBS) $(IMGUI_HEADERS) $(OBJ) -o $(NAME)
-
-# Compile the objects
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
