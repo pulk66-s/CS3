@@ -6,10 +6,8 @@ namespace cs::game::buildings
 {
     bool SpecialBuilding::build(map::Infos &infos)
     {
-        for (geometry::Rect r : infos.colliders()) {
-            if (r.collide(*this)) {
-                return false;
-            }
+        if (!ABuilding::build(infos)) {
+            return false;
         }
         infos.colliders().add(*this);
         return true;
