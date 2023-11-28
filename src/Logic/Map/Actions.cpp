@@ -7,13 +7,21 @@ namespace cs::game::map
     {
         std::shared_ptr<buildings::IBuilding> road = std::make_shared<buildings::Road>(x, y);
 
+        if (!road->build(this->map->infos())) {
+            std::cout << "Can't build road here" << std::endl;
+            return;
+        }
         this->map->buildings().add(road);
     }
 
-    void Actions::addBuilding(int x, int y)
+    void Actions::addBuilding(int x, int y, int w, int h)
     {
-        std::shared_ptr<buildings::IBuilding> house = std::make_shared<buildings::House>(x, y);
+        std::shared_ptr<buildings::IBuilding> house = std::make_shared<buildings::House>(x, y, w, h);
 
+        if (!house->build(this->map->infos())) {
+            std::cout << "Can't build house here" << std::endl;
+            return;
+        }
         this->map->buildings().add(house);
         house->build(this->map->infos());
     }

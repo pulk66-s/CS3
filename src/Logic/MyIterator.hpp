@@ -12,9 +12,9 @@ namespace cs::game
         public:
             using iterator_category = std::forward_iterator_tag;
             using difference_type   = std::ptrdiff_t;
-            using value_type        = std::shared_ptr<T>;
-            using pointer           = std::shared_ptr<T>*;
-            using reference         = std::shared_ptr<T>&;
+            using value_type        = T;
+            using pointer           = T*;
+            using reference         = T&;
 
             Iterator(pointer ptr) : _ptr(ptr) {}
 

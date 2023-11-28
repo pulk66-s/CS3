@@ -1,11 +1,13 @@
 CC		=	g++
 
-SRC		=	src/main.cpp						\
-			src/Logic/Buildings/Road.cpp		\
-			src/Logic/Buildings/House.cpp		\
-			src/Logic/Buildings/ABuilding.cpp	\
-			src/Logic/Map/Actions.cpp			\
-			src/Logic/Map/Buildings.cpp			\
+SRC		=	src/main.cpp							\
+			src/Logic/Buildings/Road.cpp			\
+			src/Logic/Buildings/House.cpp			\
+			src/Logic/Buildings/ABuilding.cpp		\
+			src/Logic/Buildings/SpecialBuilding.cpp	\
+			src/Logic/Map/Actions.cpp				\
+			src/Logic/Map/Buildings.cpp				\
+			src/Logic/Geometry/Rect.cpp				\
 
 OBJ		=	$(SRC:.cpp=.o)
 

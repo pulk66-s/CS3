@@ -9,7 +9,9 @@ namespace cs::game::buildings
     public:
         House();
         House(int x, int y);
-        void build(map::Infos &infos);
+        House(int x, int y, int w, int h);
+        House(geometry::Point position, geometry::Point size);
+        bool build(map::Infos &infos) override;
 
     private:
         int population = 4;

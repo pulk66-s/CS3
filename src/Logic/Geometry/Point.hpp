@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Logic/namespace.hpp"
+#include <iostream>
 
 namespace cs::game::geometry
 {
@@ -9,8 +10,8 @@ namespace cs::game::geometry
         Point(int x, int y): _x(x), _y(y) {}
         Point(): _x(0), _y(0) {}
 
-        int x() { return _x; };
-        int y() { return _y; };
+        int x() const { return _x; };
+        int y() const { return _y; };
         void x(int x) { _x = x; };
         void y(int y) { _y = y; };
 
@@ -23,6 +24,12 @@ namespace cs::game::geometry
         void removeY(int y) { _y -= y; };
         void remove(int x, int y) { removeX(x); removeY(y); };
         void remove(Point point) { remove(point.x(), point.y()); };
+
+        friend bool operator==(Point const& a, Point const& b) { return a.x() == b.x() && a.y() == b.y(); }
+        friend std::ostream &operator<<(std::ostream &os, Point const& point) {
+            os << "Point(" << point.x() << ", " << point.y() << ")";
+            return os;
+        }
     protected:
         int _x, _y;
     };

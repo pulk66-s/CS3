@@ -7,9 +7,11 @@ namespace cs::game::buildings
 {
     class ABuilding : public IBuilding {
     public:
-        ABuilding() {};
+        ABuilding();
         ABuilding(int x, int y);
+        ABuilding(int x, int y, int w, int h);
+        ABuilding(geometry::Point position, geometry::Point size);
 
-        void build(__attribute__((unused)) map::Infos &infos) override {};
+        bool build(map::Infos &infos) override;
     };
 } // namespace cs::game::buildings

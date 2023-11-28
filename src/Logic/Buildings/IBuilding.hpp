@@ -13,6 +13,6 @@ namespace cs::game::buildings
         public Entity,
         public Name {
     public:
-        virtual void build(map::Infos &infos) = 0;
+        virtual bool build(map::Infos &infos) = 0;
     };
 } // namespace cs::game::buildings

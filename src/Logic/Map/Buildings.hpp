@@ -8,7 +8,7 @@
 
 namespace cs::game::map
 {
-    class Buildings : public MyIterator<buildings::IBuilding> {
+    class Buildings : public MyIterator<std::shared_ptr<buildings::IBuilding>> {
     public:
         void add(std::shared_ptr<buildings::IBuilding> building);
         void remove(std::shared_ptr<buildings::IBuilding> building);

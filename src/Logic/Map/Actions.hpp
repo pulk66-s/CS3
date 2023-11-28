@@ -10,7 +10,7 @@ namespace cs::game::map
         Actions(std::shared_ptr<Map> map) : map(map) {}
 
         void addRoad(int x, int y);
-        void addBuilding(int x, int y);
+        void addBuilding(int x, int y, int w = 1, int h = 1);
         void listBuildings();
         void listInfos();
     private:

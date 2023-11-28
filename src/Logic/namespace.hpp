@@ -6,6 +6,7 @@ namespace cs::game
     {
         class IBuilding;
         class ABuilding;
+        class SpecialBuilding;
         class Road;
         class House;
         namespace zones
@@ -21,6 +22,7 @@ namespace cs::game
         class Infos;
         namespace infos {
             class Population;
+            class Colliders;
         };
         class Buildings;
         class Actions;
