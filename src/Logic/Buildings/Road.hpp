@@ -9,5 +9,7 @@ namespace cs::game::buildings
     public:
         Road();
         Road(int x, int y);
+
+        bool build(map::Infos &infos) override;
     };
 } // namespace cs::game::buildings

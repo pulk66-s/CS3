@@ -6,10 +6,10 @@ int main(void)
     std::shared_ptr<cs::game::map::Actions> actions = game.getActions();
 
     actions->addRoad(1, 1);
-    actions->addRoad(2, 2);
-    actions->addRoad(3, 3);
+    actions->addRoad(1, 2);
+    actions->addRoad(1, 3);
     actions->addRoad(1, 1);
-    actions->addBuilding(0, 0, 4, 4);
+    actions->addBuilding(3, 1);
     actions->listBuildings();
     actions->listInfos();
     return 0;

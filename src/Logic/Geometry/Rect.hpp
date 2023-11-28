@@ -23,6 +23,7 @@ namespace cs::game::geometry
         void removePosition(Point position) { _position.remove(position); };
 
         bool collide(Rect rect);
+        bool isNext(Rect rect);
 
         friend bool operator==(Rect const& a, Rect const& b);
         friend std::ostream &operator<<(std::ostream &os, Rect const& rect)
