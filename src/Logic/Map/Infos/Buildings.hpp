@@ -10,9 +10,9 @@ namespace cs::game::buildings
     class IBuilding;
 } // namespace cs::game::buildings
 
-namespace cs::game::map
+namespace cs::game::map::infos
 {
     class Buildings : public Storage<std::shared_ptr<buildings::IBuilding>> {
 
     };
-} // namespace cs::game::map
+} // namespace cs::game::map::infos

@@ -27,8 +27,8 @@ namespace cs::game
             class Population;
             class Colliders;
             class Zones;
+            class Buildings;
         };
-        class Buildings;
         class Actions;
     } // namespace map
     namespace geometry

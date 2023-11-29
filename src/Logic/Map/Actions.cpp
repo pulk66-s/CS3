@@ -12,7 +12,7 @@ namespace cs::game::map
             std::cout << "Can't build road here" << std::endl;
             return;
         }
-        this->map->buildings().add(road);
+        this->map->infos().buildings().add(road);
     }
 
     void Actions::addBuilding(int x, int y, int w, int h)
@@ -23,7 +23,7 @@ namespace cs::game::map
             std::cout << "Can't build house here" << std::endl;
             return;
         }
-        this->map->buildings().add(house);
+        this->map->infos().buildings().add(house);
         house->build(this->map->infos());
     }
 
@@ -31,7 +31,7 @@ namespace cs::game::map
     {
         std::cout << "============" << std::endl;
         std::cout << "All Buildings" << std::endl;
-        for (std::shared_ptr<buildings::IBuilding> b : this->map->buildings()) {
+        for (std::shared_ptr<buildings::IBuilding> b : this->map->infos().buildings()) {
             std::cout << "- " << b->id() << " " << b->name()
                 << ": ((" << b->position().x() << ", "
                 << b->position().y() << "),("

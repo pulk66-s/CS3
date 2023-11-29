@@ -7,7 +7,6 @@ SRC		=	src/main.cpp							\
 			src/Logic/Buildings/SpecialBuilding.cpp	\
 			src/Logic/Buildings/Zones/AZone.cpp		\
 			src/Logic/Map/Actions.cpp				\
-			src/Logic/Map/Buildings.cpp				\
 			src/Logic/Geometry/Rect.cpp				\
 			src/Logic/Geometry/Line.cpp				\
 			src/Logic/Geometry/Segment.cpp			\
