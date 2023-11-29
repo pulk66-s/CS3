@@ -4,18 +4,14 @@
 
 namespace cs::game::buildings
 {
-    bool SpecialBuilding::build(
-        Storage<std::shared_ptr<buildings::zones::IZone>> &zones,
-        Storage<geometry::Rect> &colliders,
-        map::infos::Population &population
-    ) {
+    bool SpecialBuilding::build(map::Infos &infos) {
         geometry::Rect t = *this;
 
-        if (!ABuilding::build(zones, colliders, population)) {
+        if (!ABuilding::build(infos)) {
             return false;
         }
-        if (NearRoad::build(colliders, t)) {
-            colliders.add(t);
+        if (NearRoad::build(infos.colliders(), t)) {
+            infos.colliders().add(t);
             return true;
         }
         return false;

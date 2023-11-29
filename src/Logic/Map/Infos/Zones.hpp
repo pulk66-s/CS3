@@ -1,9 +1,13 @@
 #pragma once
 
 #include "Logic/namespace.hpp"
-#include "Logic/Building.hpp"
 #include "Logic/Storage.hpp"
 #include <vector>
+
+namespace cs::game::buildings::zones
+{
+    class IZone;    
+} // namespace cs::game::buildings::zones
 
 namespace cs::game::map::infos
 {

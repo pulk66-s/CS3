@@ -11,11 +11,7 @@ namespace cs::game::buildings
         House(int x, int y);
         House(int x, int y, int w, int h);
         House(geometry::Point position, geometry::Point size);
-        bool build(
-            Storage<std::shared_ptr<buildings::zones::IZone>> &zones,
-            Storage<geometry::Rect> &colliders,
-            map::infos::Population &population
-        ) override;
+        bool build(map::Infos &infos) override;
 
     private:
         int population = 4;

@@ -10,10 +10,6 @@ namespace cs::game::buildings
     public:
         SpecialBuilding(int x, int y): ABuilding(x, y) {};
 
-        bool build(
-            Storage<std::shared_ptr<buildings::zones::IZone>> &zones,
-            Storage<geometry::Rect> &colliders,
-            map::infos::Population &population
-        ) override;
+        bool build(map::Infos &infos) override;
     };
 } // namespace cs::game::buildings

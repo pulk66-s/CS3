@@ -14,15 +14,11 @@ namespace cs::game::buildings
         this->setName("House");
     }
 
-    bool House::build(
-        Storage<std::shared_ptr<buildings::zones::IZone>> &zones,
-        Storage<geometry::Rect> &colliders,
-        map::infos::Population &population
-    ) {
-        if (!ABuilding::build(zones, colliders, population)) {
+    bool House::build(map::Infos &infos) {
+        if (!ABuilding::build(infos)) {
             return false;
         }
-        population.add(this->population);
+        infos.pop().add(this->population);
         return true;
     }
 } // namespace cs::game::buildings

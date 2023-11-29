@@ -12,10 +12,6 @@ namespace cs::game::buildings
         ABuilding(int x, int y, int w, int h);
         ABuilding(geometry::Point position, geometry::Point size);
 
-        bool build(
-            __attribute__((unused)) Storage<std::shared_ptr<buildings::zones::IZone>> &zones,
-            Storage<geometry::Rect> &colliders,
-            __attribute__((unused)) map::infos::Population &population
-        ) override;
+        bool build(map::Infos &infos) override;
     };
 } // namespace cs::game::buildings

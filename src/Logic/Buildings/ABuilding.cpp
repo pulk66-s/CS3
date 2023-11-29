@@ -15,12 +15,8 @@ namespace cs::game::buildings
         this->size(size);
     }
 
-    bool ABuilding::build(
-        __attribute__((unused)) Storage<std::shared_ptr<buildings::zones::IZone>> &zones,
-        Storage<geometry::Rect> &colliders,
-        __attribute__((unused)) map::infos::Population &population
-    ) {
-        for (geometry::Rect r : colliders) {
+    bool ABuilding::build(map::Infos &infos) {
+        for (geometry::Rect r : infos.colliders()) {
             if (r.overlap(*this)) {
                 return false;
             }

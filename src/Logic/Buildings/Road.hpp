@@ -10,10 +10,6 @@ namespace cs::game::buildings
         Road();
         Road(int x, int y);
 
-        bool build(
-            Storage<std::shared_ptr<buildings::zones::IZone>> &zones,
-            Storage<geometry::Rect> &colliders,
-            map::infos::Population &population
-        ) override;
+        bool build(map::Infos &infos) override;
     };
 } // namespace cs::game::buildings
