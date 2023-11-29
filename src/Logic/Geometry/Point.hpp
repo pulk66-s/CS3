@@ -26,6 +26,7 @@ namespace cs::game::geometry
         void remove(Point point) { remove(point.x(), point.y()); };
 
         friend bool operator==(Point const& a, Point const& b) { return a.x() == b.x() && a.y() == b.y(); }
+        friend Point operator+(Point const& a, Point const& b) { return Point(a.x() + b.x(), a.y() + b.y()); }
         friend std::ostream &operator<<(std::ostream &os, Point const& point) {
             os << "Point(" << point.x() << ", " << point.y() << ")";
             return os;

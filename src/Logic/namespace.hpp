@@ -7,6 +7,7 @@ namespace cs::game
         class IBuilding;
         class ABuilding;
         class SpecialBuilding;
+        class NearRoad;
         class Road;
         class House;
         namespace zones
@@ -14,6 +15,8 @@ namespace cs::game
             class IZone;
             class AZone;
             class Habitable;
+            class Industrial;
+            class Commercial;
         } // namespace zones
     } // namespace buildings
     namespace map
@@ -23,6 +26,7 @@ namespace cs::game
         namespace infos {
             class Population;
             class Colliders;
+            class Zones;
         };
         class Buildings;
         class Actions;
@@ -31,10 +35,14 @@ namespace cs::game
     {
         class Point;
         class Area;
+        class Line;
+        class Segment;
     } // namespace geometry
     class Name;
     class Entity;
 
     template <typename T>
     class MyIterator;
+    template <typename T>
+    class Storage;
 } // namespace cs::game

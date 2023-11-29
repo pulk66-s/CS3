@@ -9,11 +9,15 @@ namespace cs::game::buildings
         this->setName("Road");
     }
 
-    bool Road::build(map::Infos &infos) {
-        if (!ABuilding::build(infos)) {
+    bool Road::build(
+        Storage<std::shared_ptr<buildings::zones::IZone>> &zones,
+        Storage<geometry::Rect> &colliders,
+        map::infos::Population &population
+    ) {
+        if (!ABuilding::build(zones, colliders, population)) {
             return false;
         }
-        infos.colliders().add(*this);
+        colliders.add(*this);
         return true;
     }
 } // namespace cs::game::buildings

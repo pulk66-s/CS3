@@ -1,13 +1,12 @@
 #pragma once
 
 #include "Logic/namespace.hpp"
+#include "Logic/Building.hpp"
 #include "Logic/Storage.hpp"
-#include "Logic/Geometry.hpp"
 #include <vector>
-#include <algorithm>
 
 namespace cs::game::map::infos
 {
-    class Colliders : public Storage<geometry::Rect> {
+    class Zones : public Storage<std::shared_ptr<buildings::zones::IZone>> {
     };
 } // namespace cs::game::map::infos

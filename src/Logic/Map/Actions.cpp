@@ -1,4 +1,5 @@
 #include "Logic/Map/Actions.hpp"
+#include "Logic/Building.hpp"
 #include <iostream>
 
 namespace cs::game::map
@@ -7,7 +8,7 @@ namespace cs::game::map
     {
         std::shared_ptr<buildings::IBuilding> road = std::make_shared<buildings::Road>(x, y);
 
-        if (!road->build(this->map->infos())) {
+        if (!road->build(this->map->infos().zones(), this->map->infos().colliders(), this->map->infos().pop())) {
             std::cout << "Can't build road here" << std::endl;
             return;
         }
@@ -18,12 +19,12 @@ namespace cs::game::map
     {
         std::shared_ptr<buildings::IBuilding> house = std::make_shared<buildings::House>(x, y, w, h);
 
-        if (!house->build(this->map->infos())) {
+        if (!house->build(this->map->infos().zones(), this->map->infos().colliders(), this->map->infos().pop())) {
             std::cout << "Can't build house here" << std::endl;
             return;
         }
         this->map->buildings().add(house);
-        house->build(this->map->infos());
+        house->build(this->map->infos().zones(), this->map->infos().colliders(), this->map->infos().pop());
     }
 
     void Actions::listBuildings()
@@ -46,5 +47,18 @@ namespace cs::game::map
         std::cout << "All Infos" << std::endl;
         std::cout << "Population: " << this->map->infos().pop().nb() << std::endl;
         std::cout << "============" << std::endl;
+    }
+
+    void Actions::listZones()
+    {
+        std::cout << "============" << std::endl;
+        std::cout << "All Zones" << std::endl;
+        for (std::shared_ptr<buildings::zones::IZone> z : this->map->infos().zones()) {
+            std::cout << "- " << z->id() << " " << z->name()
+                << ": ((" << z->position().x() << ", "
+                << z->position().y() << "),("
+                << z->size().x() << ", " << z->size().y() << "))"
+            << std::endl;
+        }
     }
 } // namespace cs::game::map

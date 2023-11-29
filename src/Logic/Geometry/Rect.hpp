@@ -2,6 +2,8 @@
 
 #include "Logic/namespace.hpp"
 #include "Logic/Geometry/Point.hpp"
+#include "Logic/Geometry/Line.hpp"
+#include "Logic/Geometry/Segment.hpp"
 #include <iostream>
 
 namespace cs::game::geometry
@@ -23,7 +25,9 @@ namespace cs::game::geometry
         void removePosition(Point position) { _position.remove(position); };
 
         bool collide(Rect rect);
+        bool contains(Point point);
         bool isNext(Rect rect);
+        bool overlap(Rect rect);
 
         friend bool operator==(Rect const& a, Rect const& b);
         friend std::ostream &operator<<(std::ostream &os, Rect const& rect)
